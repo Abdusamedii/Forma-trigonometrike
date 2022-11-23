@@ -12,7 +12,7 @@ public class Trigonometri{
 		float x = (float)a;
 		
 		System.out.println("Sinusi i " + b + " shkalleve eshte " +  x);
-		
+		//Versioni 0.0.1
 	}
 	
 }

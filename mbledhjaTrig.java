@@ -3,11 +3,6 @@ import java.lang.Math;
 
 public class mbledhjaTrig{
 	public static void main(String [] args){
-		// me bo
-		//sin(a+b) = sina*cosb+cosa*sinb
-		//sin(a-b) = sina*cosb-cosa*sinb
-		//cos(a+b) = cosa*cosb-sina*sinb
-		//cos(a-b) = cosa*cosb+sina*sinb
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Shkruani funksionin e mbledhjes trigonometrike qe deshironi te beni: ");
 		String st1 = sc.next();
@@ -18,12 +13,28 @@ public class mbledhjaTrig{
 		x = Math.toRadians(x);
 		float a = (float)x;
 		y = Math.toRadians(y);
-		float b = (float)y;		
-		//System.out.println(numberOnly);
+		float b = (float)y;
+		//sin(a+b) = sina*cosb+cosa*sinb
+		//sin(a-b) = sina*cosb-cosa*sinb
 		if(st1.contains("sin") && st1.contains("+")){
 			double zgjidhja = Math.sin(a)*Math.cos(b)+Math.cos(a)*Math.sin(b);
 			System.out.println(zgjidhja);
 		}
-		//versioni 0.0.1 vetem mbledhjen sin(a+b) baza osht kry veq ka mbet mi zavendesu formulat
+		if(st1.contains("sin") && st1.contains("-")){
+			double zgjidhja = Math.sin(a)*Math.cos(b)-Math.cos(a)*Math.sin(b);
+			System.out.println(zgjidhja);
+		}
+		//Cos
+		//cos(a+b) = cosa*cosb-sina*sinb
+		//cos(a-b) = cosa*cosb+sina*sinb
+		if(st1.contains("cos") && st1.contains("+")){
+			double zgjidhja = Math.cos(a)*Math.cos(b)-Math.sin(a)*Math.sin(b);
+			System.out.println(zgjidhja);
+		}
+		if(st1.contains("cos") && st1.contains("-")){
+			double zgjidhja = Math.cos(a)*Math.cos(b)+Math.sin(a)*Math.sin(b);
+			System.out.println(zgjidhja);
+		}
+		//versioni 0.0.2
 	}
 }

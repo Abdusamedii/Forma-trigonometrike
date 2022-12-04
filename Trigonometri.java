@@ -113,7 +113,7 @@ public class Trigonometri{
 			if(numberOnly.contains("120") || numberOnly.contains("240")){
 				System.out.print(" ose -1/2");
 			}
-			
+			//Versioni 0.1
 		}
 	}
 	

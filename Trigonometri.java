@@ -19,7 +19,10 @@ public class Trigonometri{
 		if(st1.contains("sin")){
 			double z = Math.sin(x);
 			System.out.print((float)z);
-			if(numberOnly.equals("30") || numberOnly.contains("150")){
+			if((float)z == 0.5){
+				System.out.print(" ose 1/2");
+			}
+			if(numberOnly.contains("150")){
 				System.out.print(" ose 1/2");
 			}
 			if(numberOnly.contains("45") || numberOnly.contains("135")){
@@ -42,7 +45,10 @@ public class Trigonometri{
 		if(st1.contains("cos")){
 			double z = Math.cos(x);
 			System.out.print((float)z);
-			if(numberOnly.equals("30") || numberOnly.contains("330")){
+			if(z == 0.8660254037844387){
+				System.out.print(" ose sqr(3)/2");
+			}
+			if(numberOnly.contains("330")){
 			System.out.print(" ose sqr(3)/2");
 			}
 			if(numberOnly.contains("45") || numberOnly.contains("315")){
@@ -65,7 +71,10 @@ public class Trigonometri{
 		if(st1.contains("tg") || st1.contains("tan")){
 			double z = Math.tan(x);
 			System.out.print((float)z);
-			if(numberOnly.equals("30") || numberOnly.contains("210")){
+			if(z == 0.5773502691896257){
+				System.out.print(" ose sqr(3)/3");
+			}
+			if(numberOnly.contains("210")){
 			System.out.print(" ose sqr(3)/3");
 			}
 			if(numberOnly.contains("60") || numberOnly.contains("240")){
@@ -83,7 +92,10 @@ public class Trigonometri{
 			double z = Math.tan(x);
 			double t = 1/z;
 			System.out.print((float)t);
-			if(numberOnly.equals("30") || numberOnly.contains("330")){
+			if(t == 1.7320508075688774){
+				System.out.print(" ose sqr(3)/2");
+			}
+			if(numberOnly.contains("330")){
 			System.out.print(" ose sqr(3)/2");
 			}
 			if(numberOnly.contains("45") || numberOnly.contains("315")){

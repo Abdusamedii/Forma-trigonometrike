@@ -12,6 +12,9 @@ public class Matrica {
     double indexJ;
     double rez;
     int ranguMatricesFillestare;
+    boolean ok = true;
+    int counterOfRang = 1;
+
 
     public Matrica(int rowSize, int columnSize) {
         setSize(rowSize, columnSize);
@@ -128,48 +131,43 @@ public class Matrica {
 
 
     public double metodaEMinoreve (Matrica m) {
-        Matrica temp = new Matrica(m.rowSize - 1, m.columnSize - 1);
-
-        System.out.println("Rangu: " + m.rowSize);
-
-        if (minorRunning) {
-            System.out.println(Arrays.deepToString(putValuesWithArray(temp, MATRICA_FILLESTARE)));
-        }
-
-
-
         if (m.rowSize != m.columnSize) {
             System.out.println("Sistemi u mbyll");
             System.exit(0);
         }
-
-
         if (m.rowSize == 3) {
-            System.out.println("Ekzekutohet metoda e trekenedeshit1");
             return metodaETrekendeshit(m);
         }
 
+        Matrica temp = new Matrica(ranguMatricesFillestare - counterOfRang, ranguMatricesFillestare - counterOfRang);
 
-        for (int j = 0; j < m.rowSize; j++) {
-            indexI = 0;
-            indexJ = j;
-            rez = rez + MATRICA_FILLESTARE[0][j] * Math.pow(-1, 0+j+2) * metodaEMinoreve(temp);
+
+        if (minorRunning && m.rowSize != 3) {
+            matrix = putValuesWithArray(temp);
         }
 
 
+        if (ok) {
+            ok = false;
+            for (int j = 0; j < m.rowSize; j++) {
+                indexI = 0;
+                indexJ = j;
+                metodaEMinoreve(m);
+                rez = rez + MATRICA_FILLESTARE[0][j] * Math.pow(-1, j+2) * metodaEMinoreve(temp);
+                m = new Matrica(ranguMatricesFillestare, ranguMatricesFillestare);
+            }
 
-
-
+        }
 
 
         return rez;
     }
 
-    public double[][] putValuesWithArray(Matrica m, double [][] matrixTemp) {
+    public double[][] putValuesWithArray(Matrica m) {
         int u = 0;
         int v = 0;
-        System.out.println("indexI: " + indexI);
-        System.out.println("indexJ1: " + indexJ);
+//        System.out.println("indexI: " + indexI);
+//        System.out.println("indexJ1: " + indexJ);
 
 
 
@@ -177,10 +175,8 @@ public class Matrica {
             v=0;
             for (int j = 0; j < ranguMatricesFillestare; j++) {
                 if (i != indexI && j != indexJ){
-                    if (u < 3 && v < 3) {
                         m.matrix[u][v] = MATRICA_FILLESTARE[i][j];
                         v++;
-                    }
                 }
             }
             if(i != indexI) {

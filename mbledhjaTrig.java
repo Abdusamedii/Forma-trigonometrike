@@ -35,6 +35,27 @@ public class mbledhjaTrig{
 			double zgjidhja = Math.cos(a)*Math.cos(b)+Math.sin(a)*Math.sin(b);
 			System.out.println(zgjidhja);
 		}
-		//versioni 0.0.2
+		if(st1.contains("tg") && st1.contains("+")){
+			double zgj1 = Math.tan(a)+Math.tan(b);
+			double zgj2 = 1-Math.tan(a)*Math.tan(b);
+			double zgjidhja = zgj1/zgj2;
+			System.out.println(zgjidhja);
+		}
+		if(st1.contains("tg") && st1.contains("-")){
+			double zgj1 = Math.tan(a)-Math.tan(b);
+			double zgj2 = 1+Math.tan(a)*Math.tan(b);
+			double zgjidhja = zgj1/zgj2;
+			System.out.println(zgjidhja);
+		}
+		if(st1.contains("sin") && st1.contains("/2")){
+			double zgjidhja = Math.sqrt((1-Math.cos(a))/2);
+			System.out.println((float)zgjidhja);
+		}
+		if(st1.contains("cos") && st1.contains("/2")){
+			double zgjidhja = Math.sqrt((1+Math.cos(a))/2);
+			System.out.print("+- ");
+			System.out.print((float)zgjidhja);
+		}
+		//versioni 0.0.1 vetem mbledhjen sin(a+b) baza osht kry veq ka mbet mi zavendesu formulat
 	}
 }
